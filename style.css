@@ -1,0 +1,288 @@
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #f9f9f9;
+  color: #333;
+  overflow-x: hidden; /* Prevent horizontal scroll due to animations */
+}
+
+/* Header */
+header {
+  background: #fff;
+  padding: 20px 40px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  animation: fadeIn 1s ease-out; /* Animation for header title */
+}
+
+nav a {
+  margin-left: 20px;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover */
+}
+
+nav a:hover {
+  color: #0077cc;
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Buttons */
+.btn-primary {
+  padding: 12px 24px;
+  font-size: 1rem;
+  background: #0077cc;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease; /* Smooth transition for hover */
+}
+
+.btn-primary:hover {
+  background: #005f99;
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.btn-secondary {
+  background: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease; /* Smooth transition for hover */
+}
+
+.btn-secondary:hover {
+  background: #1f7a35;
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Hero Section */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 60px 40px;
+  background: #eaf3fc;
+  align-items: center;
+  gap: 40px; /* Space between text and image */
+  overflow: hidden; /* Ensure content doesn't overflow during animation */
+}
+
+.hero-text {
+  animation: slideInLeft 1s ease-out; /* Animation for hero text */
+}
+
+.hero-text h2 {
+  font-size: 2.4rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.hero-image {
+  text-align: center;
+  animation: slideInRight 1s ease-out; /* Animation for hero image */
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px; /* Slightly rounded corners for the image */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1); /* Subtle shadow */
+}
+
+/* Products Section */
+.products {
+  padding: 60px 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.product-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover */
+}
+
+.product-card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 8px 18px rgba(0,0,0,0.1); /* Enhanced shadow on hover */
+}
+
+.product-card img {
+  width: 100%;
+  max-width: 200px;
+  margin-bottom: 15px;
+  border-radius: 8px; /* Rounded corners for product images */
+}
+
+.product-card h3 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+}
+
+.product-card p {
+  color: #777;
+  margin-bottom: 10px;
+}
+
+/* About & Contact Sections */
+.about, .contact {
+  padding: 60px 40px;
+  background: #fff;
+  margin-top: 40px; /* Add some margin above these sections */
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.03); /* Subtle shadow on top */
+}
+
+.about h2, .contact h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+.about p {
+  max-width: 800px;
+  margin: auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+  text-align: center;
+}
+
+.contact form {
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact input, .contact textarea {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for focus */
+}
+
+.contact input:focus, .contact textarea:focus {
+  border-color: #0077cc;
+  box-shadow: 0 0 0 3px rgba(0, 119, 204, 0.2); /* Subtle glow on focus */
+  outline: none; /* Remove default outline */
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #333;
+  color: white;
+  margin-top: 40px;
+  font-size: 0.9rem;
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  nav {
+    margin-top: 15px;
+  }
+
+  nav a {
+    margin: 0 10px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 40px 20px;
+  }
+
+  .hero-text {
+    text-align: center;
+  }
+
+  .hero-image {
+    order: -1; /* Move image above text on smaller screens */
+    margin-bottom: 30px;
+  }
+
+  .hero-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .products, .about, .contact {
+    padding: 40px 20px;
+  }
+
+  .about h2, .contact h2 {
+    font-size: 1.8rem;
+  }
+}
